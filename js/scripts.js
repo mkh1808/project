@@ -376,6 +376,14 @@ function populate() {
         }
     ].forEach(movie => {
         let openRequest = window.indexedDB.open("db", 2);
+        
+        openRequest.onupgradeneeded = function () {
+        let db = openRequest.result;
+        if (!db.objectStoreNames.contains('movies')) { 
+            db.createObjectStore('movies', {keyPath: 'name'}); // создаём хранилище
+        }
+        }
+        
         openRequest.onsuccess = function () {
             let db = openRequest.result;
             let transaction = db.transaction("movies", "readwrite");
