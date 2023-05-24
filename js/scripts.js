@@ -44,10 +44,6 @@ function removeFromDb(name, navigate) {
 }
 
 function openNewPage() {
-    if(!ADMIN){
-        alert('Войдите как администратор')
-        return;
-    }
     window.open('./new.html', '_self');
 }
 
@@ -157,7 +153,11 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         ADMIN = true;
         const html = document.getElementById('nav').innerHTML;
-        document.getElementById('nav').innerHTML = html + '<a class="jump nav-item ms-2 badge rounded-pill bg-dark text-white cursor-pointer shadow d-flex justify-content-center align-items-center text-decoration-none"\n' +
+        document.getElementById('nav').innerHTML = html + '<span class="jump nav-item ms-2 badge rounded-pill bg-dark text-white cursor-pointer shadow d-flex justify-content-center align-items-center text-decoration-none"'+
+           ' onclick="openNewPage()" style="height: 40px">' +
+           ' <i class="fas fa-plus" style="font-size: 1.2rem"></i><span class="ms-1">Добавить</span>'+
+        '</span>'+
+'<a class="jump nav-item ms-2 badge rounded-pill bg-dark text-white cursor-pointer shadow d-flex justify-content-center align-items-center text-decoration-none"\n' +
             '           onclick="logout()" style="height: 40px"\n' +
             '           title="Выйти">\n' +
             '          <i class="fa-solid fa-right-from-bracket" style="font-size: 1.2rem"></i>\n' +
