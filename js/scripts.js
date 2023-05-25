@@ -6,7 +6,7 @@ function storeToDb(movie) {
     
     openRequest.onupgradeneeded = function () {
         let db = openRequest.result;
-        if (!db.objectStoreNames.contains('movies')) { // если хранилище "books" не существует
+        if (!db.objectStoreNames.contains('movies')) { // если хранилище "movies" не существует
             db.createObjectStore('movies', {keyPath: 'name'}); // создаём хранилище
         }
     }
@@ -33,7 +33,7 @@ function removeFromDb(name, navigate) {
 
     openRequest.onupgradeneeded = function () {
         let db = openRequest.result;
-        if (!db.objectStoreNames.contains('movies')) { // если хранилище "books" не существует
+        if (!db.objectStoreNames.contains('movies')) { // если хранилище "movies" не существует
             db.createObjectStore('movies', {keyPath: 'name'}); // создаём хранилище
         }
     }
@@ -131,7 +131,7 @@ function showFilteredData(value) {
 
     openRequest.onupgradeneeded = function () {
         let db = openRequest.result;
-        if (!db.objectStoreNames.contains('movies')) { // если хранилище "books" не существует
+        if (!db.objectStoreNames.contains('movies')) { // если хранилище "movies" не существует
             db.createObjectStore('movies', {keyPath: 'name'}); // создаём хранилище
         }
     }
@@ -190,7 +190,7 @@ function load() {
 
         openRequest.onupgradeneeded = function () {
             let db = openRequest.result;
-            if (!db.objectStoreNames.contains('movies')) { // если хранилище "books" не существует
+            if (!db.objectStoreNames.contains('movies')) { // если хранилище "movies" не существует
                 db.createObjectStore('movies', {keyPath: 'name'}); // создаём хранилище
             }
         }
@@ -399,7 +399,7 @@ function showData() {
 
     openRequest.onupgradeneeded = function () {
         let db = openRequest.result;
-        if (!db.objectStoreNames.contains('movies')) { // если хранилище "books" не существует
+        if (!db.objectStoreNames.contains('movies')) { // если хранилище "movies" не существует
             db.createObjectStore('movies', {keyPath: 'name'}); // создаём хранилище
         }
     }
@@ -514,7 +514,7 @@ function random() {
 
     openRequest.onupgradeneeded = function () {
         let db = openRequest.result;
-        if (!db.objectStoreNames.contains('movies')) { // если хранилище "books" не существует
+        if (!db.objectStoreNames.contains('movies')) { // если хранилище "movies" не существует
             db.createObjectStore('movies', {keyPath: 'name'}); // создаём хранилище
         }
     }
